@@ -13,4 +13,5 @@ jsonpath-ng>=1.6.0
 
 # Reporting
 allure-pytest>=2.13.0
+pytest-html>=4.1.1
 allure-python-commons

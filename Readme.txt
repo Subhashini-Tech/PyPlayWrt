@@ -3,7 +3,7 @@ python -m pytest tests -m smoke --headed --slowmo 1000 -v -rA  --alluredir allur
 
 install allure
 #setup Path allure bin
-allure generate allure-results --single-file
+allure generate allure-results --single-file --clean
 
 
 python -m pytest -s tests -n 2  --headed --slowmo 1000 --html=report.html --self-contained-html
@@ -21,3 +21,8 @@ setupAllure:
     tar xvf ./allure-2.32.0.tgz
   - shell (name Allure Version): |
       ${pwdir}/allure-2.32.0/bin/allure --version
+
+$env:SELENIUM_REMOTE_URL="http://192.168.1.5:4444/wd/hub"; $env:SELENIUM_REMOTE_CAPABILITIES='{"platformName":"Linux","acceptInsecureCerts":true}'; python -m pytest tests -m smoke --headed --slowmo 1000 -v -rA  --alluredir allure-results
+
+
+GRID Live Password - secret
